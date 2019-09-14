@@ -187,13 +187,13 @@ func saveOrder(c buffalo.Context, order *models.Order) (error, error) {
 		return errors.New("order"), nil
 	}
 
+	if err := tx.RawQuery("DELETE FROM order_rows WHERE order_id = ?", order.ID.String()).Exec(); err != nil {
+		return nil, errors.Wrap(err, "could not delete order rows")
+	}
+
 	for _, row := range order.Rows {
 		row.Order = order.ID
-		if row.ID == uuid.Nil {
-			verr, err = tx.ValidateAndCreate(&row)
-		} else {
-			verr, err = tx.ValidateAndSave(&row)
-		}
+		verr, err = tx.ValidateAndCreate(&row)
 
 		if err != nil {
 			return nil, errors.Wrap(err, "unable to validate and create order row")
