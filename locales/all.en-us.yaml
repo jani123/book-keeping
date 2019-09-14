@@ -35,3 +35,5 @@
   translation: "Description is empty"
 - id: order-was-edited
   translation: "Order was edited"
+- id: empty-order-row-name
+  translation: "Order row name is empty"

@@ -35,3 +35,5 @@
   translation: "Selite on tyhjä"
 - id: order-was-edited
   translation: "Tilaus on tallennettu"
+- id: empty-order-row-name
+  translation: "Tilausrivin nimi on tyhjä"
