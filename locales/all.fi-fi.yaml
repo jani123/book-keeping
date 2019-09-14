@@ -2,36 +2,36 @@
 - id: welcome_greeting
   translation: "Welcome to Buffalo (EN)"
 - id: order-details-header
-  translation: "Order Details"
+  translation: "Tilauksen tiedot"
 - id: order-id
-  translation: "ID"
+  translation: "Tunniste"
 - id: order-description
-  translation: "Description"
+  translation: "Selite"
 - id: order-customer
-  translation: "Customer"
+  translation: "Asiakas"
 - id: order-created-at
-  translation: "Created at"
+  translation: "Luotu"
 - id: order-updated-at
-  translation: "Updated at"
+  translation: "Päivitety"
 - id: order-rows-header
-  translation: "Order Rows"
+  translation: "Tilausrivit"
 - id: order-rows-add
-  translation: "Add"
+  translation: "Lisää"
 - id: order-row-name
-  translation: "Name"
+  translation: "Nimi"
 - id: order-row-price
-  translation: "Price"
+  translation: "Hinta"
 - id: order-row-rate
-  translation: "Rate"
+  translation: "Arvonlisävero"
 - id: order-save
-  translation: "Save"
+  translation: "Tallenna"
 - id: order-row-remove
-  translation: "Remove"
+  translation: "Lisää"
 - id: order-was-created
-  translation: "Order was created"
+  translation: "Tilaus luotu"
 - id: empty-order-customer
-  translation: "Customer is empty"
+  translation: "Asiakas on tyhjä"
 - id: empty-order-description
-  translation: "Description is empty"
+  translation: "Selite on tyhjä"
 - id: order-was-edited
-  translation: "Order was edited"
+  translation: "Tilaus on tallennettu"

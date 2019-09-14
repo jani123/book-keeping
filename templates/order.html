@@ -1,0 +1,59 @@
+<%= form({action: action, method: "POST"}) { %>
+  <h2><%= t("order-details-header") %></h2>
+
+  <div class="form-group">
+    <label for="order-id"><%= t("order-id") %></label>
+    <input type="text" class="form-control" id="order-id" name="order-id" value="<%= order.ID %>" readonly>
+  </div>
+
+  <div class="form-group">
+    <label for="order-description"><%= t("order-description") %></label>
+    <input type="text" class="form-control" id="order-description" name="order-description" value="<%= order.Description %>" placeholder="Enter description">
+  </div>
+
+  <div class="form-group">
+    <label for="order-customer"><%= t("order-customer") %></label>
+    <input type="text" class="form-control" id="order-customer" name="order-customer" value="<%= order.Customer %>" placeholder="Enter customer">
+  </div>
+
+  <div class="form-group">
+    <label for="order-created-at"><%= t("order-created-at") %></label>
+    <input type="hidden" name="order-created-at" value="<%= order.CreatedAt.Format("02.01.2006 15:04:05") %>">
+    <input type="text" class="form-control" id="order-created-at" value="<%= order.CreatedAt.Format("02.01.2006 15:04:05") %>" readonly>
+  </div>
+
+  <div class="form-group">
+    <label for="order-updated-at"><%= t("order-updated-at") %></label>
+    <input type="hidden" name="order-updated-at" value="<%= order.UpdatedAt.Format("02.01.2006 15:04:05") %>">
+    <input type="text" class="form-control" id="order-updated-at" name="order-updated-at" value="<%= order.UpdatedAt.Format("02.01.2006 15:04:05") %>" readonly>
+  </div>
+
+  <h2>
+      <%= t("order-rows-header") %>
+    <button type="button" class="btn btn-primary" id="order-row-add"><%= t("order-rows-add") %></button>
+  </h2>
+  <div id="order-rows">
+    <%= for (_, row) in order.Rows { %>
+      <div class="card">
+        <div class="card-body" >
+          <input type="hidden" name="order-row-ids[]" value="<%= row.ID %>">
+          <div class="form-group">
+            <label for="order-row-name"><%= t("order-row-name") %></label>
+            <input type="text" class="form-control" id="order-row-name" name="order-row-names[]" value="<%= row.Name %>" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+            <label for="order-row-price"><%= t("order-row-price") %></label>
+            <input type="number" class="form-control" id="order-row-price" name="order-row-prices[]" value="<%= row.Price %>" placeholder="Enter price" min="0" step="0.01">
+          </div>
+          <div class="form-group">
+            <label for="order-row-rate"><%= t("order-row-rate") %></label>
+            <input type="number" class="form-control" id="order-row-rate" name="order-row-rates[]" value="<%= row.Rate %>" placeholder="Enter rate" min="0" step="0.1">
+          </div>
+          <button type="button" class="btn btn-danger order-row-remove"><%= t("order-row-remove") %></button>
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+  <button type="submit" class="btn btn-primary"><%= t("order-save") %></button>
+<% } %>

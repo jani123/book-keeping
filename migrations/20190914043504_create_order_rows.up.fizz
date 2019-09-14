@@ -1,0 +1,13 @@
+create_table("order_rows") {
+	t.Column("id", "uuid", {"primary": true})
+	t.Column("order_id", "uuid", {"null": false})
+	t.Column("name", "string", {"null": false})
+	t.Column("price", "float", {"null": false})
+	t.Column("rate", "float", {"null": false})
+	t.Timestamps()
+}
+add_foreign_key("order_rows", "order_id", {"orders": ["id"]}, {
+	"name": "order_rows_order_fk",
+	"on_delete": "cascade",
+	"on_update": "cascade"
+})

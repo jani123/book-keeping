@@ -2,6 +2,7 @@ package actions
 
 import (
 	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/buffalo/binding"
 	"github.com/gobuffalo/envy"
 	forcessl "github.com/gobuffalo/mw-forcessl"
 	paramlogger "github.com/gobuffalo/mw-paramlogger"
@@ -38,8 +39,11 @@ func App() *buffalo.App {
 	if app == nil {
 		app = buffalo.New(buffalo.Options{
 			Env:         ENV,
-			SessionName: "_book_keeping_session",
+			SessionName: "_session",
 		})
+
+		// We are using finnish timeformat
+		binding.RegisterTimeFormats("02.01.2006 15:04:05")
 
 		// Automatically redirect to SSL
 		app.Use(forceSSL())
@@ -60,6 +64,10 @@ func App() *buffalo.App {
 		app.Use(translations())
 
 		app.GET("/", HomeHandler)
+		app.GET("/order", NewOrderGetHandler)
+		app.POST("/order", NewOrderPostHandler)
+		app.GET("/order/{id}", EditOrderGetHandler)
+		app.POST("/order/{id}", EditOrderPostHandler)
 
 		app.ServeFiles("/", assetsBox) // serve files from the public directory
 	}
