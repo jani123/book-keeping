@@ -39,6 +39,7 @@ FROM scratch
 
 WORKDIR /bin/
 COPY --from=builder /bin/app .
+COPY --from=builder /go/bin/buffalo /bin/buffalo
 COPY --from=builder /sources/public /public
 COPY --from=ca-manager /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
