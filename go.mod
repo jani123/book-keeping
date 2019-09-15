@@ -17,6 +17,7 @@ require (
 	github.com/gobuffalo/suite v2.8.2+incompatible
 	github.com/gobuffalo/validate v2.0.3+incompatible
 	github.com/gofrs/uuid v3.2.0+incompatible
+	github.com/jackc/pgx v3.6.0+incompatible // indirect
 	github.com/markbates/grift v1.1.0
 	github.com/pkg/errors v0.8.1
 	github.com/spf13/afero v1.2.1 // indirect

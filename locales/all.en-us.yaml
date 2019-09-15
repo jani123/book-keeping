@@ -37,3 +37,13 @@
   translation: "Order was edited"
 - id: empty-order-row-name
   translation: "Order row name is empty"
+- id: order-filters
+  translation: "Toggle filters"
+- id: order-filter-start-date
+  translation: "From"
+- id: order-filter-end-date
+  translation: "To"
+- id: orders-search
+  translation: "Search"
+- id: orders-header
+  translation: "Orders"

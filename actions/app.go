@@ -44,9 +44,11 @@ func App() *buffalo.App {
 
 		// We are using finnish timeformat
 		binding.RegisterTimeFormats("02.01.2006 15:04:05")
+		binding.RegisterTimeFormats("02.01.2006")
 
 		// Automatically redirect to SSL
-		app.Use(forceSSL())
+		// We assume user uses nginx or other to proxy and set up ssl
+		//app.Use(forceSSL())
 
 		// Log request parameters (filters apply).
 		app.Use(paramlogger.ParameterLogger)
@@ -64,6 +66,7 @@ func App() *buffalo.App {
 		app.Use(translations())
 
 		app.GET("/", HomeHandler)
+		app.GET("/orders", OrdersHandler)
 		app.GET("/order", NewOrderGetHandler)
 		app.POST("/order", NewOrderPostHandler)
 		app.GET("/order/{id}", EditOrderGetHandler)

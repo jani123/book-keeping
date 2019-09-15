@@ -1,5 +1,6 @@
 require("expose-loader?$!expose-loader?jQuery!jquery");
 require("bootstrap/dist/js/bootstrap.bundle.js");
+require("bootstrap-datepicker/dist/js/bootstrap-datepicker.js");
 
 $(() => {
 
@@ -42,5 +43,12 @@ $(() => {
     // Order-rows is loaded, we can do stuff
     $("#order-rows").ready(function () {
         updateOrderRowRemoveState()
+    });
+
+    $('input.datepicker').datepicker({
+        format: 'dd.mm.yyyy',
+        todayBtn: true,
+        calendarWeeks: true,
+        autoclose: true
     });
 });

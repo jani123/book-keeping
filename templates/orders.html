@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="subtitle">
+            <div class="container">
+                <h3>
+                    <%= t("orders-header") %>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters">
+                        <%= t("order-filters") %>
+                    </button>
+                </h3>
+            </div>
+        </div>
+        <div class="table-responsive">
+
+            <div class="collapse" id="collapseFilters">
+                <div class="card card-body">
+                    <%= form({action: ordersPath(), method: "GET"}) { %>
+                        <h4>Filters</h4>
+
+                        <div class="form-group">
+                            <label for="order-filter-start-date"><%= t("order-filter-start-date") %></label>
+                            <input id="order-filter-start-date" name="orders-filter-start-date" type="text" class="form-control datepicker" required="required" pattern="[0-9]{1,2}.[0-9]{1,2}.[0-9]{4,4}" value="<%= filters.StartDate.Format("02.01.2006") %>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="order-filter-start-date"><%= t("order-filter-end-date") %></label>
+                            <input id="order-filter-end-date" name="orders-filter-end-date" type="text" class="form-control datepicker" required="required" pattern="[0-9]{1,2}.[0-9]{1,2}.[0-9]{4,4}" value="<%= filters.EndDate.Format("02.01.2006") %>">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary"><%= t("orders-search") %></button>
+                    <% } %>
+                </div>
+            </div>
+
+            <br>
+    
+            <table class="table table-striped">
+                <thead>
+                    <tr text-align="left">
+                            <th><%= t("order-description") %></th>
+                            <th><%= t("order-customer") %></th>
+                            <th><%= t("order-created-at") %></th>
+                            <th><%= t("order-updated-at") %></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                <%= for (o) in orders { %>
+                    <tr>
+                        <td><a href="<%= orderPath({id: o.ID}) %>"><%= o.Description %></a></td>
+                        <td><%= o.Customer %></td>
+                        <td><%= o.CreatedAt.Format("02.01.2006 15:04:05") %></td>
+                        <td><%= o.UpdatedAt.Format("02.01.2006 15:04:05") %></td>
+                    </tr>
+                <% } %>
+
+                </tbody>
+            </table>
+
+            <br>
+        </div>
+    </div>
+</div>

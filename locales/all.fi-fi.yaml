@@ -37,3 +37,13 @@
   translation: "Tilaus on tallennettu"
 - id: empty-order-row-name
   translation: "Tilausrivin nimi on tyhjä"
+- id: order-filters
+  translation: "Näytä/piilota suodattimet"
+- id: order-filter-start-date
+  translation: "Alkaen"
+- id: order-filter-end-date
+  translation: "Ennen"
+- id: orders-search
+  translation: "Hae"
+- id: orders-header
+  translation: "Tilaukset"
