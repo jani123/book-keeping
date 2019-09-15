@@ -52,4 +52,4 @@ services:
 
 networks:
   default:
-    name: core-network
+    name: book-keeping-network
