@@ -66,11 +66,13 @@ func App() *buffalo.App {
 		app.Use(translations())
 
 		app.GET("/", HomeHandler)
+		app.GET("/debug", DebugHandler)
 		app.GET("/orders", OrdersHandler)
-		app.GET("/order", NewOrderGetHandler)
-		app.POST("/order", NewOrderPostHandler)
+		app.GET("/order/new", NewOrderGetHandler)
+		app.POST("/order/new", NewOrderPostHandler)
 		app.GET("/order/{id}", EditOrderGetHandler)
 		app.POST("/order/{id}", EditOrderPostHandler)
+		app.GET("/order/{id}/receipt", OrderReceiptGetHandler)
 
 		app.ServeFiles("/", assetsBox) // serve files from the public directory
 	}

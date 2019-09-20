@@ -10,32 +10,35 @@
     <link rel="icon" href="<%= assetPath("images/favicon.ico") %>">
   </head>
   <body>
-    <header>
+
+        
+
+    <div class="container">
+      <header>
         <div class="container">
           <div class="row">
             <div class="col-md-1 col-sm-2 col-xs-2 logo">
-              <a href="<%= rootPath() %>"><img src="<%= rootPath() %>assets/images/logo.svg" alt=""></a>
+                <a href="<%= rootPath() %>"><img src="<%= rootPath() %>assets/images/logo.svg" alt=""></a>
             </div>
             <div class="col-md-9 col-sm-9 col-xs-10 titles">
               <h1><%= t("welcome_greeting") %></h1>
               <h2>
-                <a href="https://github.com/gobuffalo/buffalo"><i class="fa fa-github" aria-hidden="true"></i> https://github.com/gobuffalo/buffalo</a>
+                <a href="https://github.com/jani123/book-keeping"><i class="fa fa-github" aria-hidden="true"></i>https://github.com/jani123/book-keeping</a>
               </h2>
-              <h2 class="documentation">
+              <!--<h2 class="documentation">
                 <a href="http://gobuffalo.io/"><i class="fa fa-book" aria-hidden="true"></i> Documentation</a>
-              </h2>
+              </h2>-->
             </div>
           </div>
         </div>
       </header>
         
-
-    <div class="container">
       <%= partial("flash.html") %>
       <%= yield %>
+
+      <div class="foot"> <span> Powered by <a href="http://gobuffalo.io/">gobuffalo.io</a></span> </div>
     </div>
 
-    <div class="foot"> <span> Powered by <a href="http://gobuffalo.io/">gobuffalo.io</a></span> </div>
     
     <%= javascriptTag("application.js") %>
   </body>

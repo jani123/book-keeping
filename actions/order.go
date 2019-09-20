@@ -15,7 +15,7 @@ import (
 
 // NewOrderGetHandler handles get request for new order page
 func NewOrderGetHandler(c buffalo.Context) error {
-	c.Set("action", "/order")
+	c.Set("action", "/order/new")
 
 	order := models.Order{}
 	order.ID = uuid.Nil

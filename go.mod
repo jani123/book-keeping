@@ -3,6 +3,7 @@ module github.com/jani123/book-keeping
 go 1.12
 
 require (
+	github.com/cockroachdb/cockroach-go v0.0.0-20190916165215-ad57a61cc915 // indirect
 	github.com/gobuffalo/buffalo v0.14.10
 	github.com/gobuffalo/buffalo-pop v1.20.1
 	github.com/gobuffalo/envy v1.7.1
@@ -17,6 +18,7 @@ require (
 	github.com/gobuffalo/suite v2.8.2+incompatible
 	github.com/gobuffalo/validate v2.0.3+incompatible
 	github.com/gofrs/uuid v3.2.0+incompatible
+	github.com/jackc/pgconn v1.0.0 // indirect
 	github.com/jackc/pgx v3.6.0+incompatible // indirect
 	github.com/markbates/grift v1.1.0
 	github.com/pkg/errors v0.8.1
