@@ -15,12 +15,32 @@
 
         <div class="form-group">
           <label for="order-description"><%= t("order-description") %></label>
-          <input type="text" class="form-control" id="order-description" name="order-description" value="<%= order.Description %>" placeholder="Enter description">
+          <input type="text" class="form-control" id="order-description" name="order-description" value="<%= order.Description %>" placeholder="<%= t("order-description-placeholder") %>">
         </div>
 
         <div class="form-group">
           <label for="order-customer"><%= t("order-customer") %></label>
-          <input type="text" class="form-control" id="order-customer" name="order-customer" value="<%= order.Customer %>" placeholder="Enter customer">
+          <input type="text" class="form-control" id="order-customer" name="order-customer" value="<%= order.Customer %>" placeholder="<%= t("order-customer-placeholder") %>">
+        </div>
+
+        <div class="form-group">
+          <label for="order-date"><%= t("order-date") %></label>
+          <input id="order-date" name="order-date" type="text" class="form-control datepicker" required="required" pattern="[0-9]{1,2}.[0-9]{1,2}.[0-9]{4,4}" value="<%= order.Date.Format("02.01.2006") %>">
+        </div>
+
+        <div class="form-group">
+          <label for="order-reference"><%= t("order-reference") %></label>
+          <input type="text" class="form-control" id="order-reference" name="order-reference" value="<%= order.Reference %>" placeholder="<%= t("order-reference-placeholder") %>
+        </div>
+
+        <div class="form-group">
+          <label for="order-payment-message"><%= t("order-payment-message") %></label>
+          <input type="text" class="form-control" id="order-payment-message" name="order-payment-message" value="<%= order.PaymentMessage %>" placeholder="<%= t("order-payment-message-placeholder") %>">
+        </div>
+
+        <div class="form-group">
+          <label for="order-due-date"><%= t("order-due-date") %></label>
+          <input id="order-due-date" name="order-due-date" type="text" class="form-control datepicker" required="required" pattern="[0-9]{1,2}.[0-9]{1,2}.[0-9]{4,4}" value="<%= order.DueDate.Format("02.01.2006") %>">
         </div>
 
         <div class="form-group">
@@ -58,17 +78,21 @@
               <input type="hidden" name="order-row-ids[]" value="<%= row.ID %>">
               <div class="form-group">
                 <label for="order-row-name"><%= t("order-row-name") %></label>
-                <input type="text" class="form-control" id="order-row-name" name="order-row-names[]" value="<%= row.Name %>" placeholder="Enter name">
+                <input type="text" class="form-control" id="order-row-name" name="order-row-names[]" value="<%= row.Name %>" placeholder="<%= t("order-row-name-placeholder") %>">
               </div>
               <div class="form-group">
                 <label for="order-row-price"><%= t("order-row-price") %></label>
-                <input type="number" class="form-control" id="order-row-price" name="order-row-prices[]" value="<%= row.Price %>" placeholder="Enter price" min="0" step="0.01">
+                <input type="number" class="form-control" id="order-row-price" name="order-row-prices[]" value="<%= row.Price %>" placeholder="<%= t("order-row-price-placeholder") %>" min="0" step="0.01">
               </div>
               <div class="form-group">
-                <label for="order-row-rate"><%= t("order-row-rate") %></label>
-                <input type="number" class="form-control" id="order-row-rate" name="order-row-rates[]" value="<%= row.Rate %>" placeholder="Enter rate" min="0" step="0.1">
+                <label for="order-row-vat"><%= t("vat") %></label>
+                <input type="number" class="form-control" id="order-row-vat" name="order-row-vats[]" value="<%= row.VAT %>" placeholder="<%= t("order-row-vat-placeholder") %>" min="0" step="0.1">
               </div>
-              <button type="button" class="btn btn-danger order-row-remove"><%= t("order-row-remove") %></button>
+              <div class="form-group">
+                <label for="order-row-quantity"><%= t("order-row-quantity") %></label>
+                <input type="number" class="form-control" id="order-row-quantity" name="order-row-quantitys[]" value="<%= row.Quantity %>" placeholder="<%= t("order-row-quantity-placeholder") %>" min="1" step="1">
+              </div>
+                <button type="button" class="btn btn-danger order-row-remove"><%= t("order-row-remove") %></button>
             </div>
           </div>
           <br>

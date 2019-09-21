@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="fi">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="/assets/style/receipt.css"/>
+	</head>
+	<body>
+		<div class="page">
+			<div class="subpage">
+				<!-- HEADER -->
+				<div class="header-container">
+					<div class="h-row-1">
+						<div class="h-col-a">
+							<span class="bold">
+									<%= companyName %><br>
+									<%= companyAddress %><br>
+									<%= companyPostalCode %> <span class="uppercase"><%= companyCity %></span>
+							</span>
+						</div>
+						<div class="h-col-b right-align">
+							<span class="bold uppercase">
+								<%= t("invoice") %>
+							</span>
+						</div>
+					</div>
+					<div class="h-row-2">
+						<div class="h-col-a">
+							<span class="bold">
+								<%= order.Customer %><br>
+							</span>
+						</div>
+						<div class="h-col-b">
+							<div>
+								<div></div>
+								<div><%= t("order-date") %></div>
+								<div class="bold right-align"><%= order.Date.Format("02.01.2006") %></div>
+							</div>
+							<div>
+								<div></div>
+								<div><%= t("order-reference") %></div>
+								<div class="bold right-align"><%= order.Reference %></div>
+							</div>
+							<div>
+								<br>
+							</div>
+							<div>
+								<div></div>
+								<div><%= t("order-payment-message") %></div>
+								<div class="bold right-align"><%= order.PaymentMessage %></div>
+							</div>
+							<div>
+								<div></div>
+								<div><%= t("order-sum") %></div>
+								<div class="bold right-align"><%= price(order.TotalWithVAT()) %> &euro;</div>
+							</div>
+							<div>
+								<div></div>
+								<div><%= t("order-due-date") %></div>
+								<div class="bold right-align"><%= order.DueDate.Format("02.01.2006") %></div>
+							</div>
+					</div>
+				</div>
+
+				<!-- ITEMS -->
+				<div class="item-container">
+					<div class="title">
+						<div class="c-row-c1"><%= t("order-row-name") %></div>
+						<div class="c-row-c2 right-align"><%= t("order-row-unit-price") %></div>
+						<div class="c-row-c3 right-align">määrä</div>
+						<div class="c-row-c4 right-align">ALV %</div>
+						<div class="c-row-c5 right-align">ALV €</div>
+						<div class="c-row-c6 right-align">yhteensä €</div>
+					</div>
+					<%= for (_, row) in order.Rows { %>
+						<div class="items">
+							<div class="c-row-c1"><%= row.Name %></div>
+							<div class="c-row-c2 right-align"><%= price(row.UnitPriceWithVAT()) %>&nbsp;&euro;&nbsp;/&nbsp;<%= t("piece") %></div>
+							<div class="c-row-c3 right-align"><%= row.Quantity %>&nbsp;<%= t("piece") %></div>
+							<div class="c-row-c4 right-align"><%= vat(row.VAT) %>&nbsp;%</div>
+							<div class="c-row-c5 right-align"><%= price(row.TotalVAT()) %>&nbsp;&euro;</div>
+							<div class="c-row-c6 right-align"><%= price(row.PriceWithVAT()) %>&nbsp;&euro;</div>
+						</div>
+					<% } %>
+				</div>
+
+				<!-- SUMMARY -->
+				<div class="summary-container">
+					<div class="span">
+					</div>
+					<div class="text">
+						<div><%= t("taxfree") %></div>
+						<div><%= t("vat") %>&nbsp;<%= vat(order.TotalVATPercent()) %></div>
+						<div class="bold"><%= t("total") %></div>
+					</div>
+					<div class="sum">
+						<div class="right-align"><%= price(order.TotalWithoutVAT()) %>&nbsp;&euro;</div>
+						<div class="right-align"><%= price(order.TotalVAT()) %>&nbsp;&euro;</div>
+						<div class="bold right-align"><%= price(order.TotalWithVAT()) %>&nbsp;&euro;</div>
+					</div>
+				</div>
+
+				<!-- FOOTER -->
+				<div class="footer-container">
+					<div>
+							<span class="bold"><%= companyName %></span><br>
+							<%= companyAddress %><br>
+							<%= companyPostalCode%>&nbsp;<span class="uppercase"><%= companyCity %></span><br>
+							<%= t("business-id") %>:&nbsp;<%= companyID %>
+					</div>
+					<div class="right-align">
+							<br>
+							<%= t("sms") %>:&nbsp;<span class="bold"><%= companySMS %></span><br>
+							<%= t("email") %>:&nbsp;<span class="bold"><%= companyEmail %></span><br>
+							<%= t("bank-account") %>:&nbsp;<span class="bold"><%= companyBankAccount %></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

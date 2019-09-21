@@ -1,6 +1,10 @@
 create_table("orders") {
 	t.Column("id", "uuid", {"primary": true})
 	t.Column("description", "string", {"null": false})
+	t.Column("date", "time", {"null": false})
+	t.Column("reference", "string", {"null": false})
+	t.Column("payment_message", "string", {"null": false})
+	t.Column("due_date", "time", {"null": false})
 	t.Column("customer", "string", {"null": false})
 	t.Timestamps()
 }

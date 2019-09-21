@@ -1,6 +1,9 @@
 package actions
 
 import (
+	"fmt"
+	"math"
+
 	"github.com/gobuffalo/buffalo/render"
 	"github.com/gobuffalo/packr/v2"
 )
@@ -23,6 +26,15 @@ func init() {
 			// below and import "github.com/gobuffalo/helpers/forms"
 			// forms.FormKey:     forms.Form,
 			// forms.FormForKey:  forms.FormFor,
+
+			"price": func(v float64) string {
+				unit := 0.05
+				v = math.Round(v/unit) * unit
+				return fmt.Sprintf("%.2f", v)
+			},
+			"vat": func(v float64) string {
+				return fmt.Sprintf("%.2f", v)
+			},
 		},
 	})
 }

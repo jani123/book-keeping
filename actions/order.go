@@ -21,18 +21,24 @@ func NewOrderGetHandler(c buffalo.Context) error {
 	order.ID = uuid.Nil
 	order.Customer = "Neighbour!"
 	order.Description = "Big order!"
+	order.Date = time.Now()
+	order.Reference = "1234567"
+	order.PaymentMessage = "You shall pay!"
+	order.DueDate = time.Now().Add(time.Duration(3600))
 	order.CreatedAt = time.Now()
 	order.UpdatedAt = time.Now()
 	order.Rows = make(models.OrderRows, 2)
 	order.Rows[0] = models.OrderRow{
-		Name:  "Something small",
-		Price: 0.35,
-		Rate:  8.0,
+		Name:     "Something small",
+		Price:    0.35,
+		VAT:      8.0,
+		Quantity: 30,
 	}
 	order.Rows[1] = models.OrderRow{
-		Name:  "Something else",
-		Price: 35,
-		Rate:  8.0,
+		Name:     "Something else",
+		Price:    35,
+		VAT:      8.0,
+		Quantity: 5,
 	}
 	c.Set("order", order)
 	return c.Render(200, r.HTML("order.html"))

@@ -15,8 +15,9 @@ type OrderRow struct {
 	ID        uuid.UUID `json:"id" db:"id" form:"order-row-id"`
 	Order     uuid.UUID `json:"order" db:"order_id" form:"order-row-order-id"`
 	Name      string    `json:"name" db:"name" form:"order-row-name"`
-	Price     float32   `json:"price" db:"price" form:"order-row-price"`
-	Rate      float32   `json:"rate" db:"rate" form:"order-row-rate"`
+	Price     float64   `json:"price" db:"price" form:"order-row-price"`
+	VAT       float64   `json:"vat" db:"vat" form:"order-row-vat"`
+	Quantity  int       `json:"quantity" db:"quantity" form:"order-row-quantity"`
 	CreatedAt time.Time `json:"created-at" db:"created_at"`
 	UpdatedAt time.Time `json:"updated-at" db:"updated_at"`
 }
@@ -54,4 +55,34 @@ func (o *OrderRow) ValidateCreate(tx *pop.Connection) (*validate.Errors, error) 
 // This method is not required and may be deleted.
 func (o *OrderRow) ValidateUpdate(tx *pop.Connection) (*validate.Errors, error) {
 	return validate.NewErrors(), nil
+}
+
+// UnitPriceWithoutVAT returns value of one item without VAT
+func (o *OrderRow) UnitPriceWithoutVAT() float64 {
+	return o.Price
+}
+
+// UnitPriceWithVAT returns value of one item with VAT
+func (o *OrderRow) UnitPriceWithVAT() float64 {
+	return o.UnitPriceWithoutVAT() * (1.0 + o.VAT/100.0)
+}
+
+// PriceWithoutVAT returns value of all items without VAT
+func (o *OrderRow) PriceWithoutVAT() float64 {
+	return o.UnitPriceWithoutVAT() * float64(o.Quantity)
+}
+
+// PriceWithVAT returns value of all items with VAT
+func (o *OrderRow) PriceWithVAT() float64 {
+	return o.UnitPriceWithVAT() * float64(o.Quantity)
+}
+
+// UnitVAT returns VAT value for one item
+func (o *OrderRow) UnitVAT() float64 {
+	return o.UnitPriceWithVAT() - o.UnitPriceWithoutVAT()
+}
+
+// TotalVAT returns VAT value for all items
+func (o *OrderRow) TotalVAT() float64 {
+	return o.PriceWithVAT() - o.PriceWithoutVAT()
 }

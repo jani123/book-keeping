@@ -18,7 +18,7 @@
 - id: order-rows-add
   translation: "Add"
 - id: order-row-name
-  translation: "Name"
+  translation: "Product"
 - id: order-row-price
   translation: "Price"
 - id: order-row-rate
@@ -59,3 +59,55 @@
   translation: "Settings"
 - id: settings-description
   translation: "Attributes like address, name etc can found and edited from here."
+- id: invoice
+  translation: Invoice
+- id: order-date
+  translation: Date
+- id: order-reference
+  translation: Order reference
+- id: order-payment-message
+  translation: Payment message
+- id: order-sum
+  translation: Sum
+- id: order-due-date
+  translation: Due date
+- id: order-description-placeholder
+  translation: Enter description here
+- id: order-customer-placeholder
+  translation: Enter customer here
+- id: order-reference-placeholder
+  translation: Enter reference here
+- id: order-payment-message-placeholder
+  translation: Enter payment message
+- id: empty-order-reference
+  translation: Empty order reference
+- id: empty-order-payment-message
+  translation: Empty order payment message
+- id: piece-short
+  translation: pcs.
+- id: taxfree
+  translation: Taxfree
+- id: vat
+  translation: VAT
+- id: total
+  translation: Total
+- id: order-row-unit-price
+  translation: "Unit price"
+- id: order-row-quantity
+  translation: "Quantity"
+- id: order-row-quantity-placeholder
+  translation: Enter quantity here
+- id: order-row-vat-placeholder
+  translation: Enter VAT here
+- id: order-row-price-placeholder
+  translation: Enter price here
+- id: order-row-name-placeholder
+  translation: Enter product name here
+- id: business-id
+  translation: Business ID
+- id: email
+  translation: Email
+- id: sms
+  translation: Tel. number
+- id: bank-account
+  translation: Bank
