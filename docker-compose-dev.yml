@@ -1,0 +1,23 @@
+version: "3.5"
+
+services:
+  app:
+    image: gobuffalo/buffalo:development
+    working_dir: /sources
+    command:
+      - "/go/bin/buffalo"
+      - "dev"
+    environment:
+      - GO111MODULE=on
+      - GOPATH:/gopath
+      - GOCACHE:/gocache
+    volumes:
+      - ./:/sources
+      - gopath:/gopath
+      - gocache:/gocache
+
+volumes:
+  gocache:
+    name: book-keeping-gocache
+  gopath:
+    name: book-keeping-gopath

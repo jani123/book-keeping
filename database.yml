@@ -3,7 +3,7 @@ development:
   database: book_keeping
   user: keeper
   password: password
-  host: database.127.0.0.1.xip.io
+  host: database.127.0.0.1.nip.io
   pool: 5
 
 test:

@@ -1,0 +1,9 @@
+version: "3.5"
+
+services:
+  app:
+    image: github.com/jani123/book-keeping
+    build:
+      context: ./
+    command:
+      - "/bin/app"

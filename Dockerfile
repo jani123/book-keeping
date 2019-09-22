@@ -45,8 +45,8 @@ COPY --from=ca-manager /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 # Bind the app to 0.0.0.0 so it can be seen from outside the container
 ENV ADDR=0.0.0.0
-ENV PORT=80
+ENV PORT=3000
 
-EXPOSE 80
+EXPOSE 3000
 
 ENTRYPOINT ["/bin/app"]
