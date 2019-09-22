@@ -60,56 +60,56 @@
 - id: settings-description
   translation: "Tietueet kuten osoite, nimi yms voidaan nähdä ja muokata täältä."
 - id: invoice
-  translation: Lasku
+  translation: "Lasku"
 - id: date
-  translation: Päiväys
+  translation: "Päiväys"
 - id: order-reference
-  translation: Laskunumero
+  translation: "Laskunumero"
 - id: order-payment-message
   translation: "Maksun viesti"
 - id: order-sum
-  translation: Summa
+  translation: "Summa"
 - id: order-due-date
-  translation: Eräpäivä
+  translation: "Eräpäivä"
 - id: order-description-placeholder
-  translation: Syötä kuvaus tähän
+  translation: "Syötä kuvaus tähän"
 - id: order-customer-placeholder
-  translation: Syötä asiakas tähän
+  translation: "Syötä asiakas tähän"
 - id: order-reference-placeholder
-  translation: Syötä laskunumero tähän
+  translation: "Syötä laskunumero tähän"
 - id: order-payment-message
-  translation: Syötä maksun viesti tähän
+  translation: "Syötä maksun viesti tähän"
 - id: empty-order-reference
-  translation: Tyhjä laskunumero
+  translation: "Tyhjä laskunumero"
 - id: empty-order-payment-message
-  translation: Tyhjä maksun viesti
+  translation: "Tyhjä maksun viesti"
 - id: piece-short
-  translation: kpl
+  translation: "Kpl"
 - id: taxfree
-  translation: Veroton
+  translation: "Veroton"
 - id: vat
-  translation: ALV
+  translation: "ALV"
 - id: total
-  translation: Yhteensä
+  translation: "Yhteensä"
 - id: order-row-unit-price
   translation: "à hinta"
 - id: order-row-quantity
   translation: "Määrä"
 - id: order-row-quantity-placeholder
-  translation: Syötä määrän tähän
+  translation: "Syötä määrän tähän"
 - id: order-row-vat-placeholder
-  translation: Syötä ALV tähän
+  translation: "Syötä ALV tähän"
 - id: order-row-price-placeholder
-  translation: Syötä hinta tähän
+  translation: "Syötä hinta tähän"
 - id: order-row-name-placeholder
-  translation: Syötä tuotteen nimi tähän
+  translation: "Syötä tuotteen nimi tähän"
 - id: business-id
-  translation: Y-tunnus
+  translation: "Y-tunnus"
 - id: email
-  translation: Sähköposti
+  translation: "Sähköposti"
 - id: sms
-  translation: Puh. numero
+  translation: "Puh. numero"
 - id: bank-account
-  translation: Pankki
+  translation: "Pankki"
 - id: order-receipt
-  translation: Receipt
+  translation: "Receipt"
