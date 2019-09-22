@@ -12,9 +12,10 @@ import (
 
 // Company model struct
 type Company struct {
-	ID          uuid.UUID `json:"id" db:"id" form:"order-id"`
+	ID          uuid.UUID `json:"id" db:"id" form:"company-id"`
 	Name        string    `json:"name" db:"name" form:"company-name"`
 	Address     string    `json:"address" db:"address" form:"company-address"`
+	PostalCode  string    `json:"postal-code" db:"postal_code" form:"company-postal-code"`
 	City        string    `json:"city" db:"city" form:"company-city"`
 	BusinessID  string    `json:"business-id" db:"business_id" form:"company-business-id"`
 	SMS         string    `json:"sms" db:"sms" form:"company-sms"`

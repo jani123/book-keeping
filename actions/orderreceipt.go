@@ -32,14 +32,6 @@ func OrderReceiptGetHandler(c buffalo.Context) error {
 	order.Date = time.Now()
 	order.Reference = "12345"
 
-	c.Set("companyName", "Simmon Company AB OY INC")
-	c.Set("companyAddress", "Testaajan katu 12 a 31")
-	c.Set("companyPostalCode", "12345")
-	c.Set("companyCity", "Townville")
-	c.Set("companyID", "12345-1")
-	c.Set("companySMS", "040 123 4567")
-	c.Set("companyEmail", "someone@somewhere")
-	c.Set("companyBankAccount", "FI00 0000 0000 0000 00")
 	c.Set("order", order)
 
 	return c.Render(200, r.HTML("receipt.html", "yield.html"))

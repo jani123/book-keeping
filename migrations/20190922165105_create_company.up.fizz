@@ -1,0 +1,12 @@
+create_table("companies") {
+	t.Column("id", "uuid", {"primary": true})
+	t.Column("name", "string", {"null": false})
+	t.Column("address", "string", {"null": false})
+	t.Column("postal_code", "string", {"null": false})
+	t.Column("city", "string", {"null": false})
+	t.Column("business_id", "string", {"null": false})
+	t.Column("sms", "string", {"null": false})
+	t.Column("email", "string", {"null": false})
+	t.Column("bank_account", "string", {"null": false})
+	t.Timestamps()
+}

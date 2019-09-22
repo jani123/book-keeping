@@ -23,7 +23,7 @@
   translation: "Hinta"
 - id: order-row-rate
   translation: "Arvonlisävero"
-- id: order-save
+- id: save
   translation: "Tallenna"
 - id: order-row-remove
   translation: "Lisää"
@@ -113,3 +113,37 @@
   translation: "Pankki"
 - id: order-receipt
   translation: "Receipt"
+- id: company-name
+  translation: "Nimi"
+- id: company-name-placeholder
+  translation: "Syötä yrityksen nimi tähän"
+- id: company-address
+  translation: "Katuosoite"
+- id: company-address-placeholder
+  translation: "Syötä katuosoite tähän"
+- id: company-postal-code
+  translation: "Postinumero"
+- id: company-postal-code-placeholder
+  translation: "Syötä postinumero tähän"
+- id: company-city
+  translation: "Kaupunki"
+- id: company-city-placeholder
+  translation: "Kaupunki"
+- id: company-business-id
+  translation: "Y-Tunnus"
+- id: company-business-id-placeholder
+  translation: "Syötä y-tunnus tähän"
+- id: company-sms
+  translation: "Puhelinnumero"
+- id: company-sms-placeholder
+  translation: "Syötä puhelinnumero tähän"
+- id: company-email
+  translation: "Sähköpostiosoite"
+- id: company-email-placeholder
+  translation: "Syötä sähköpostiosoite tähän"
+- id: company-bank-account
+  translation: "Pankkitili"
+- id: company-bank-account-placeholder
+  translation: "Syötä pankkitili tähän"
+- id: company-was-saved
+  translation: "Tallennettu"

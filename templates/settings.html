@@ -1,0 +1,59 @@
+<%= form({action: settingsPath(), method: "POST"}) { %>
+  <!-- Start of settings-->
+  <div class="row">
+      <div class="col-md-12">
+        <div class="subtitle">
+            <div class="container">
+                <h3>
+                  <%= t("settings") %>
+                </h3>
+            </div>
+        </div>
+
+        <input type="hidden" name="company-id" value="<%= company.ID %>">
+        
+        <div class="form-group">
+          <label for="company-name"><%= t("company-name") %></label>
+          <input type="text" class="form-control" id="company-name" name="company-name" value="<%= company.Name %>" placeholder="<%= t("company-name-placeholder") %>">
+        </div>
+
+        <div class="form-group">
+          <label for="company-address"><%= t("company-address") %></label>
+          <input type="text" class="form-control" id="company-address" name="company-address" value="<%= company.Address %>" placeholder="<%= t("company-address-placeholder") %>">
+        </div>
+
+        <div class="form-group">
+          <label for="company-postal-code"><%= t("company-postal-code") %></label>
+          <input type="text" class="form-control" id="company-postal-code" name="company-postal-code" value="<%= company.PostalCode %>" placeholder="<%= t("company-postal-code-placeholder") %>">
+        </div>
+
+        <div class="form-group">
+          <label for="company-city"><%= t("company-city") %></label>
+          <input type="text" class="form-control" id="company-city" name="company-city" value="<%= company.City %>" placeholder="<%= t("company-city-placeholder") %>">
+        </div>
+
+        <div class="form-group">
+          <label for="company-business-id"><%= t("company-business-id") %></label>
+          <input type="text" class="form-control" id="company-business-id" name="company-business-id" value="<%= company.BusinessID %>" placeholder="<%= t("company-business-id") %>">
+        </div>
+        
+        <div class="form-group">
+          <label for="company-sms"><%= t("company-sms") %></label>
+          <input type="text" class="form-control" id="company-sms" name="company-sms" value="<%= company.SMS %>" placeholder="<%= t("company-sms") %>">
+        </div>
+          
+        <div class="form-group">
+          <label for="company-email"><%= t("company-email") %></label>
+          <input type="text" class="form-control" id="company-email" name="company-email" value="<%= company.Email %>" placeholder="<%= t("company-email") %>">
+        </div>
+  
+        <div class="form-group">
+          <label for="company-bank-account"><%= t("company-bank-account") %></label>
+          <input type="text" class="form-control" id="company-bank-account" name="company-bank-account" value="<%= company.BankAccount %>" placeholder="<%= t("company-bank-account") %>">
+        </div>
+      </div>
+  </div>
+  <!-- End of settings-->
+
+  <button type="submit" class="btn btn-primary"><%= t("save") %></button>
+<% } %>

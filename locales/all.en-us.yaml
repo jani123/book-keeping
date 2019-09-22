@@ -23,7 +23,7 @@
   translation: "Price"
 - id: order-row-rate
   translation: "Rate"
-- id: order-save
+- id: save
   translation: "Save"
 - id: order-row-remove
   translation: "Remove"
@@ -113,3 +113,37 @@
   translation: "Bank"
 - id: order-receipt
   translation: "Receipt"
+- id: company-name
+  translation: "Name"
+- id: company-name-placeholder
+  translation: "Enter company name here"
+- id: company-address
+  translation: "Address"
+- id: company-address-placeholder
+  translation: "Enter address here"
+- id: company-postal-code
+  translation: "Postal Code"
+- id: company-postal-code-placeholder
+  translation: "Enter postal code here"
+- id: company-city
+  translation: "City"
+- id: company-city-placeholder
+  translation: "Enter city here"
+- id: company-business-id
+  translation: "Business ID"
+- id: company-business-id-placeholder
+  translation: "Enter business id here"
+- id: company-sms
+  translation: "Telephone number"
+- id: company-sms-placeholder
+  translation: "Enter telephone number here"
+- id: company-email
+  translation: "Email"
+- id: company-email-placeholder
+  translation: "Enter email here"
+- id: company-bank-account
+  translation: "Bank account"
+- id: company-bank-account-placeholder
+  translation: "Enter bank account here"
+- id: company-was-saved
+  translation: "Saved"

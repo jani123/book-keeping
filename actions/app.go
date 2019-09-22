@@ -65,6 +65,9 @@ func App() *buffalo.App {
 		// Setup and use translations:
 		app.Use(translations())
 
+		// Load settings
+		app.Use(SettingsMiddleware())
+
 		app.GET("/", HomeHandler)
 		app.GET("/debug", DebugHandler)
 		app.GET("/orders", OrdersHandler)
@@ -73,6 +76,8 @@ func App() *buffalo.App {
 		app.GET("/order/{id}", EditOrderGetHandler)
 		app.POST("/order/{id}", EditOrderPostHandler)
 		app.GET("/order/{id}/receipt", OrderReceiptGetHandler)
+		app.GET("/settings", SettingsGetHandler)
+		app.POST("/settings", SettingsPostHandler)
 
 		app.ServeFiles("/", assetsBox) // serve files from the public directory
 	}

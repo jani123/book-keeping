@@ -129,6 +129,8 @@ func EditOrderPostHandler(c buffalo.Context) error {
 func saveOrder(c buffalo.Context, order *models.Order) (error, error) {
 	tx := c.Value("tx").(*pop.Connection)
 
+	order.UpdatedAt = time.Now()
+
 	var err error
 	var verr *validate.Errors
 
@@ -155,6 +157,7 @@ func saveOrder(c buffalo.Context, order *models.Order) (error, error) {
 
 	for _, row := range order.Rows {
 		row.Order = order.ID
+		row.UpdatedAt = time.Now()
 		verr, err = tx.ValidateAndCreate(&row)
 
 		if err != nil {

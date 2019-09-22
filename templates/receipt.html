@@ -12,9 +12,9 @@
 					<div class="h-row-1">
 						<div class="h-col-a">
 							<span class="bold">
-									<%= companyName %><br>
-									<%= companyAddress %><br>
-									<%= companyPostalCode %> <span class="uppercase"><%= companyCity %></span>
+									<%= company.Name %><br>
+									<%= company.Address %><br>
+									<%= company.PostalCode %> <span class="uppercase"><%= company.City %></span>
 							</span>
 						</div>
 						<div class="h-col-b right-align">
@@ -102,16 +102,16 @@
 				<!-- FOOTER -->
 				<div class="footer-container">
 					<div>
-							<span class="bold"><%= companyName %></span><br>
-							<%= companyAddress %><br>
-							<%= companyPostalCode%>&nbsp;<span class="uppercase"><%= companyCity %></span><br>
-							<%= t("business-id") %>:&nbsp;<%= companyID %>
+							<span class="bold"><%= company.Name %></span><br>
+							<%= company.Address %><br>
+							<%= company.PostalCode%>&nbsp;<span class="uppercase"><%= company.City %></span><br>
+							<%= t("business-id") %>:&nbsp;<%= company.BusinessID %>
 					</div>
 					<div class="right-align">
 							<br>
-							<%= t("sms") %>:&nbsp;<span class="bold"><%= companySMS %></span><br>
-							<%= t("email") %>:&nbsp;<span class="bold"><%= companyEmail %></span><br>
-							<%= t("bank-account") %>:&nbsp;<span class="bold"><%= companyBankAccount %></span>
+							<%= t("sms") %>:&nbsp;<span class="bold"><%= company.SMS %></span><br>
+							<%= t("email") %>:&nbsp;<span class="bold"><%= company.Email %></span><br>
+							<%= t("bank-account") %>:&nbsp;<span class="bold"><%= company.BankAccount %></span>
 					</div>
 				</div>
 			</div>
