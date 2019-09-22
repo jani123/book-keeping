@@ -111,3 +111,5 @@
   translation: Tel. number
 - id: bank-account
   translation: Bank
+- id: order-receipt
+  translation: Receipt

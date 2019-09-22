@@ -56,16 +56,34 @@ func OrdersHandler(c buffalo.Context) error {
 
 	orders := models.Orders{}
 
-	query := tx.Where("created_at >= ?", filters.StartDate)
-	query = query.Where("created_at <= ?", filters.EndDate.AddDate(0, 0, 1)) // We want to include end of the day, meaning starting of next day
+	query := tx.Where("date >= ?", filters.StartDate)
+	query = query.Where("date < ?", filters.EndDate.AddDate(0, 0, 1)) // We want to include end of the day, meaning starting of next day
 	err := query.All(&orders)
 
 	if err != nil {
 		return errors.Wrap(err, "failed to fetch all the orders")
 	}
 
-	fmt.Printf("filters: %+v\n", filters)
 	c.Set("orders", orders)
 	c.Set("filters", filters)
+
+	totalWithoutVAT := 0.0
+	totalWithVAT := 0.0
+	totalVAT := 0.0
+	for i := range orders {
+
+		fmt.Printf("wut %+v\n", orders[i])
+		if err := tx.Load(&orders[i], "Rows"); err != nil {
+			return errors.Wrap(err, "could not load order rows")
+		}
+		totalWithoutVAT += orders[i].TotalWithoutVAT()
+		totalWithVAT += orders[i].TotalWithVAT()
+		totalVAT += orders[i].TotalVAT()
+	}
+
+	c.Set("totalWithoutVAT", totalWithoutVAT)
+	c.Set("totalWithVAT", totalWithVAT)
+	c.Set("totalVAT", totalVAT)
+
 	return c.Render(200, r.HTML("orders.html"))
 }

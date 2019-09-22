@@ -4,7 +4,10 @@
       <div class="col-md-12">
         <div class="subtitle">
             <div class="container">
-                <h3><%= t("order-details-header") %></h3>
+                <h3>
+                  <%= t("order-details-header") %>
+                  <a class="btn btn-primary" href="<%= orderReceiptPath({id: order.ID}) %>" role="button"><%= t("order-receipt") %></a>
+                </h3>
             </div>
         </div>
 

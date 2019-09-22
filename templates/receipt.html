@@ -66,10 +66,10 @@
 					<div class="title">
 						<div class="c-row-c1"><%= t("order-row-name") %></div>
 						<div class="c-row-c2 right-align"><%= t("order-row-unit-price") %></div>
-						<div class="c-row-c3 right-align">määrä</div>
-						<div class="c-row-c4 right-align">ALV %</div>
-						<div class="c-row-c5 right-align">ALV €</div>
-						<div class="c-row-c6 right-align">yhteensä €</div>
+						<div class="c-row-c3 right-align"><%= t("order-row-quantity") %></div>
+						<div class="c-row-c4 right-align"><%= t("vat") %>&nbsp;&#37;</div>
+						<div class="c-row-c5 right-align"><%= t("vat") %>&nbsp;&euro;</div>
+						<div class="c-row-c6 right-align"><%= t("total") %>&nbsp;&euro;</div>
 					</div>
 					<%= for (_, row) in order.Rows { %>
 						<div class="items">
